@@ -1,44 +1,28 @@
 language: python
-
 matrix:
   include:
-    - python: 3.6
-      env: TOXENV=py36
-    - python: 3.5
-      env: TOXENV=py35
-    - python: 3.4
-      env: TOXENV=py34
-    - python: 2.7
-      env: TOXENV=py27
-    - python: 3.6
-      env: TOXENV=flake8
-    - python: 3.6
-      env: TOXENV=isort
-
+  - python: 3.6
+    env: TOXENV=py36
+  - python: 3.5
+    env: TOXENV=py35
+  - python: 3.4
+    env: TOXENV=py34
+  - python: 2.7
+    env: TOXENV=py27
+  - python: 3.6
+    env: TOXENV=flake8
+  - python: 3.6
+    env: TOXENV=isort
 install: pip install -U tox
-
 script: tox -e ${TOXENV}
-
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
+  skip_upload_docs: true
   user: jarshwah
   password:
-    secure: !!binary |
-      UkZQcGMxUnZNMUc3M0VSOUtmWkdyZnBXa3JpRkNQbndEWHFlbSsxamxVUDcxNUUrbENJQytZZzc0
-      Vy9DREZBRWs4MVhyT3haamE3NkYzZFhsRVBnZ1F5ZWt5MmpYUHR6SU5VL01VbUlwVTVvcEJabTRx
-      azVsMDFBT1ZpUUpBeHcrcWc2WXNYTVg4dzF1NnJ6dTVTek45VG9kaXErV0QxOENKeldPZnRUMHR0
-      Zm1WRWhXYlB2OFpxV1J3aU94MkpVZVBSaUVBa2tQMnk4OGFSMFU4TEs4MXh0aFJldXdidm5ubjFO
-      UGRpWFR2NitIZ2JxN1ZQdU5qdGxhQmVncTQ2VVRycnpsMXJCNmlNaXRNWlcvMkh1Z2VBM3crZW43
-      Qjg3VHVVcDdDV3V3WEdXWTA1M0JCbW9OTlNCYjQybkg4Y1hBeGh4MFhkVXdLek82OHNxT1dpM0J5
-      bnpMZys4L2JFNG9uYnJLTEc2MGFpdSs3a3pOa0JDR0hxMEhseWV0djVYRmY0dld2YXBTOHlaWWRo
-      UitKV2FvSWsvVmwzb1A3Q2UydWRia21XaDNkWHRnZXE2Y0ZzNFdTdFN0RWVrVDJEVU5GZkpycDNq
-      K2NueURTWHJncmlEejVZOHgwK0ZsZFhCOHpBNVl4N3crOWhDaDd6MzZFenp1bUg4RHlsOWlXZnNL
-      VFZPV2YrTkNqOXJwbzFBS3hRSlBBMHdyeUowMWF5emxIc1JPNEZRVjRBeUZjMXVvOVNIM2xIbEtl
-      RWFKWkpxTmxWRGp0OGllNkhRUVRWbThzRytkV2NSVUs4K3VuOTJKNE9MaWs0bW5YdUJMRUxkaHNH
-      NnJqUFRqR2tjU3lNTWN5UGZwakRkNmdnUy9JZ2M4Uzl2cHVGR25pazRHUkNlWWlNY3JGeUEwZG89
+    secure: iTmrMxhaCgWqcGv/C8VnctmmeCVcSv2pBsPAsr10/0Ufweb9gf8sEL6rf94qzi82CV/MJjHyCQQri7b2EgKQ83GgemOxZuWyLzw1uMcbnHznegNM1yw7QTIo0jToDbBg9u/YbCRLg55g9zyZirhYaQpEtVCCMYXAaNBKZat4NkqhnlEgNZaS9AvZbUB8uzQgUaSVnQKKS09tzzlsem0XfS+3c4drBfHEdCMSqdhX2ICLjrjUoUoMBHN1jZbMD3cJSZB1Nqy8YKQOuJNhdpm+8gnH0lF4bLU0CBhEENTWwIykjmRs4KELq85IT2Oq7NLlLzxyteerzyBGqLMjbMnjc/JZOh2l0ycyekhuivxIzip4IA9NEWpiKRoH41snQV54O+ccugAjHvnN4LlFXY3FuU3ucj2k5LBnBrSXByYG1qGU66OkfM2Ydst3hBlwlfp86Jc1CnW9uvr3tzwrqYCfyNgfUs2e0sF7mSUZP+lM38oVJT6Rgx5IItqjUO9eSPcYetMx/+Yu3uj+HF/GveUFhfH1RbcDZN7qENn6zx4yncLKon/YR9yMnPACo3eDXXLVUHf0h0Huj010r3FuGP+ISkZXhbr3x89hkGvlZVB7NP+ptachjZYr1rQtYhHeqoKE46wQ8qn89uU6FaIxIbjGFymxM7M5Ox/3mFYXoUCbDU0=
   on:
     repo: jarshwah/flake8_formatter_abspath
-    condition: $TOXENV = py36
+    condition: "$TOXENV = py36"
     tags: true
-
