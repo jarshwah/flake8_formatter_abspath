@@ -20,7 +20,7 @@ test_requirements = [
 
 setup(
     name='flake8_formatter_abspath',
-    version='1.0.2',
+    version='0.1.0',
     description="A flake8 formatter plugin that shows the absolute path of files with warnings",
     long_description=readme + '\n\n' + history,
     author="Josh Smeaton",
@@ -42,7 +42,7 @@ setup(
         ]
     },
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',

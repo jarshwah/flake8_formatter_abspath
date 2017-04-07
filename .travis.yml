@@ -38,7 +38,7 @@ deploy:
       RWFKWkpxTmxWRGp0OGllNkhRUVRWbThzRytkV2NSVUs4K3VuOTJKNE9MaWs0bW5YdUJMRUxkaHNH
       NnJqUFRqR2tjU3lNTWN5UGZwakRkNmdnUy9JZ2M4Uzl2cHVGR25pazRHUkNlWWlNY3JGeUEwZG89
   on:
-    condition: $TOXENV = py36
     repo: jarshwah/flake8_formatter_abspath
+    condition: $TOXENV = py36
     tags: true
 
