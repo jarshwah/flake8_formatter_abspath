@@ -1,30 +1,41 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
 
-"""
-test_flake8_formatter_abspath
-----------------------------------
+import optparse
+import os
 
-Tests for `flake8_formatter_abspath` module.
-"""
+from flake8 import style_guide
+from flake8.formatting import default
 
-import pytest
-
-
-from flake8_formatter_abspath import flake8_formatter_abspath
+from flake8_formatter_abspath import AbsolutePathFormatter
 
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+filename = './some/file.py'
+absfilename = os.path.abspath(filename)
+error = style_guide.Error('A000', filename, 1, 1, 'wrong wrong wrong', 'import os')
 
 
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument.
-    """
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+def options(**kwargs):
+    """Create an optparse.Values instance."""
+    kwargs.setdefault('output_file', None)
+    kwargs.setdefault('tee', False)
+    return optparse.Values(kwargs)
+
+
+def verify_formatter(formatter, filename):
+    assert formatter.format(error) == '{}:1:1: A000 wrong wrong wrong'.format(filename)
+
+
+def test_abspath_formatter():
+    absformatter = AbsolutePathFormatter(
+        options(show_source=False, format='abspath')
+    )
+    verify_formatter(absformatter, absfilename)
+
+
+def test_default_formatter():
+    formatter = default.Default(
+        options(show_source=False, format='default')
+    )
+    verify_formatter(formatter, filename)

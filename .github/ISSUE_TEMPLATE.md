@@ -1,4 +1,5 @@
 * flake8-formatter-abspath version:
+* flake8 version:
 * Python version:
 * Operating System:
 

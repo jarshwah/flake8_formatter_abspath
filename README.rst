@@ -9,26 +9,31 @@ flake8-formatter-abspath
 .. image:: https://img.shields.io/travis/jarshwah/flake8_formatter_abspath.svg
         :target: https://travis-ci.org/jarshwah/flake8_formatter_abspath
 
-.. image:: https://readthedocs.org/projects/flake8-formatter-abspath/badge/?version=latest
-        :target: https://flake8-formatter-abspath.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
 .. image:: https://pyup.io/repos/github/jarshwah/flake8_formatter_abspath/shield.svg
      :target: https://pyup.io/repos/github/jarshwah/flake8_formatter_abspath/
      :alt: Updates
 
 
-A flake8 formatter plugin that shows the absolute path of files with warnings
-
+A flake8 formatter plugin that shows the absolute path of files with warnings.
 
 * Free software: MIT license
 * Documentation: https://flake8-formatter-abspath.readthedocs.io.
 
+Installation
+------------
 
-Features
+.. code-block:: bash
+
+     pip3 install flake8
+     pip3 install flake8_formatter_abspath
+
+Usage
 --------
 
-* TODO
+.. code-block:: bash
+
+     $ flake8 --format=abspath flake8_formatter_abspath
+     /Users/jarshwah/dev/flake8_formatter_abspath/flake8_formatter_abspath/plugin.py:5:1: F401 'sys' imported but unused
 
 Credits
 ---------

@@ -2,12 +2,16 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-python: 3.5
+python: 3.6
 
 env:
+  - TOXENV=py36
   - TOXENV=py35
+  - TOXENV=py34
   - TOXENV=py27
   - TOXENV=pypy
+  - TOXENV=flake8
+  - TOXENV=isort
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox
@@ -26,4 +30,4 @@ deploy:
   on:
     tags: true
     repo: jarshwah/flake8_formatter_abspath
-    condition: $TOXENV == py27
+    condition: $TOXENV == py36
