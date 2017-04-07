@@ -1,33 +1,39 @@
-# Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
 language: python
 python: 3.6
 
 env:
-  - TOXENV=py36
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py27
-  - TOXENV=pypy
-  - TOXENV=flake8
-  - TOXENV=isort
+- TOXENV=py36
+- TOXENV=py35
+- TOXENV=py34
+- TOXENV=py27
+- TOXENV=pypy
+- TOXENV=flake8
+- TOXENV=isort
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox
 
-# command to run tests, e.g. python setup.py test
 script: tox -e ${TOXENV}
 
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: jarshwah
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: !!binary |
+      UkZQcGMxUnZNMUc3M0VSOUtmWkdyZnBXa3JpRkNQbndEWHFlbSsxamxVUDcxNUUrbENJQytZZzc0
+      Vy9DREZBRWs4MVhyT3haamE3NkYzZFhsRVBnZ1F5ZWt5MmpYUHR6SU5VL01VbUlwVTVvcEJabTRx
+      azVsMDFBT1ZpUUpBeHcrcWc2WXNYTVg4dzF1NnJ6dTVTek45VG9kaXErV0QxOENKeldPZnRUMHR0
+      Zm1WRWhXYlB2OFpxV1J3aU94MkpVZVBSaUVBa2tQMnk4OGFSMFU4TEs4MXh0aFJldXdidm5ubjFO
+      UGRpWFR2NitIZ2JxN1ZQdU5qdGxhQmVncTQ2VVRycnpsMXJCNmlNaXRNWlcvMkh1Z2VBM3crZW43
+      Qjg3VHVVcDdDV3V3WEdXWTA1M0JCbW9OTlNCYjQybkg4Y1hBeGh4MFhkVXdLek82OHNxT1dpM0J5
+      bnpMZys4L2JFNG9uYnJLTEc2MGFpdSs3a3pOa0JDR0hxMEhseWV0djVYRmY0dld2YXBTOHlaWWRo
+      UitKV2FvSWsvVmwzb1A3Q2UydWRia21XaDNkWHRnZXE2Y0ZzNFdTdFN0RWVrVDJEVU5GZkpycDNq
+      K2NueURTWHJncmlEejVZOHgwK0ZsZFhCOHpBNVl4N3crOWhDaDd6MzZFenp1bUg4RHlsOWlXZnNL
+      VFZPV2YrTkNqOXJwbzFBS3hRSlBBMHdyeUowMWF5emxIc1JPNEZRVjRBeUZjMXVvOVNIM2xIbEtl
+      RWFKWkpxTmxWRGp0OGllNkhRUVRWbThzRytkV2NSVUs4K3VuOTJKNE9MaWs0bW5YdUJMRUxkaHNH
+      NnJqUFRqR2tjU3lNTWN5UGZwakRkNmdnUy9JZ2M4Uzl2cHVGR25pazRHUkNlWWlNY3JGeUEwZG89
   on:
-    tags: true
-    repo: jarshwah/flake8_formatter_abspath
     condition: $TOXENV == py36
+    repo: jarshwah/flake8_formatter_abspath
+    tags: true
+
