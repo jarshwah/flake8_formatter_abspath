@@ -17,7 +17,6 @@ flake8-formatter-abspath
 A flake8 formatter plugin that shows the absolute path of files with warnings.
 
 * Free software: MIT license
-* Documentation: https://flake8-formatter-abspath.readthedocs.io.
 
 Installation
 ------------
@@ -28,12 +27,17 @@ Installation
      pip3 install flake8_formatter_abspath
 
 Usage
---------
+-----
 
 .. code-block:: bash
 
      $ flake8 --format=abspath flake8_formatter_abspath
      /Users/jarshwah/dev/flake8_formatter_abspath/flake8_formatter_abspath/plugin.py:5:1: F401 'sys' imported but unused
+
+Jenkins WarningsPublisher
+-------------------------
+
+TODO
 
 Credits
 ---------
