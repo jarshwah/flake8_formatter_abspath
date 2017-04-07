@@ -5,7 +5,7 @@ from .plugin import AbsolutePathFormatter  # noqa: F401
 
 __author__ = """Josh Smeaton"""
 __email__ = 'josh.smeaton@gmail.com'
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 __all__ = (
     'AbsolutePathFormatter'
 )
