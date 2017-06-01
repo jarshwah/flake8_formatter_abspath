@@ -2,7 +2,7 @@ bumpversion==0.5.3
 coverage==4.3.4
 cryptography==1.8.1
 flake8==3.3.0
-isort==4.2.5
+isort==4.2.11
 pip>=9.0.1
 pytest==3.0.7
 PyYAML==3.12
