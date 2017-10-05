@@ -10,10 +10,15 @@ from flake8.formatting import default
 
 from flake8_formatter_abspath import AbsolutePathFormatter
 
-
 filename = './some/file.py'
 absfilename = os.path.abspath(filename)
-error = style_guide.Error('A000', filename, 1, 1, 'wrong wrong wrong', 'import os')
+
+try:
+    # 3.4.0
+    error = style_guide.Violation('A000', filename, 1, 1, 'wrong wrong wrong', 'import os')
+except AttributeError:
+    # 3.3.0
+    error = style_guide.Error('A000', filename, 1, 1, 'wrong wrong wrong', 'import os')
 
 
 def options(**kwargs):
