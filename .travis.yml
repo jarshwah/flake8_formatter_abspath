@@ -12,6 +12,8 @@ matrix:
   - python: 3.6
     env: TOXENV=flake8
   - python: 3.6
+    env: TOXENV=flake8-old
+  - python: 3.6
     env: TOXENV=isort
 install: pip install -U tox
 script: tox -e ${TOXENV}
